@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block title %}Lista de usuario{% endblock %}
+{% block title1 %}Lista de usuario{% endblock %}
+
+{% block content %}
+
+    		<table class="table">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nombre</th>
+						<th>Twitter</th>
+						<th>Acciones</th>
+					</tr>
+				</thead>
+				<tbody>
+
+
+				{% for usuario in object_list %}
+						<tr>
+							<td>{{ usuario.id }}</td>
+							<td>{{ usuario.name }}</td>
+							<td>{{ usuario.twitter }}</td>
+							<td>
+								<a href="{% url 'usuarios:ver'  usuario.id %}"><span class="label label-info">Ver</span></a>
+								<a href="{% url 'usuarios:modificar' usuario.id %}"><span class="label label-success">Editar</span></a>
+								<a href="{% url 'usuarios:borrar' usuario.id %}"><span class="label label-danger">Eliminar</span></a>
+							</td>
+						</tr>
+				  {% endfor %}
+				</tbody>
+			</table>
+
+{% endblock %}

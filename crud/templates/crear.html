@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block title %}Lista de usuario{% endblock %}
+{% block title1 %}Lista de usuario{% endblock %}
+
+{% block content %}
+
+
+
+<Form  action = ""  method = "post" > {%  csrf_token  %}
+
+	<p>		{{ form.name }}    </p>
+	<p>    {{ form.twitter }} </p>
+
+	<p><input type="submit" value="Guardar" class="btn btn-success"><p>
+</form>
+
+
+{% endblock %}
